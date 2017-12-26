@@ -43,7 +43,7 @@
     "style-loader": "^0.19.1",
     "url-loader": "^0.6.2",
     "vue-loader": "^13.6.1",
-    "vue-markdown-loader": "^2.3.0",
+    "vue-markdown-loader": "^0.6.2",
     "vue-router": "^3.0.1",
     "vue-template-compiler": "^2.5.13",
     "webpack": "^3.10.0",
