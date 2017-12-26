@@ -12,7 +12,7 @@ export default new Router({
         component: resolve => require(['./pages/README.md'], resolve)
     }, {
         path: '/toast',
-        component: toast
+        component: resolve => require(['./pages/toast.md'], resolve)
     }, {
         path: '/repositories',
         component: resolve => require(['./pages/repositories.md'], resolve)
