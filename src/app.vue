@@ -1,35 +1,55 @@
 <template>
-    <div>
-        <header-tab></header-tab>
-        <h2>{{msg}}</h2>
-        <ul class="nav-box">
-          <li class="nav-item" ><router-link to="/">首页</router-link></li>
-          <li class="nav-item" ><router-link to="/about">关于</router-link></li>
-        </ul>
-        <div>
-            <router-view></router-view>
-        </div>
-    </div>
+    <main class="row main">
+        <section
+          class="is-scrollable navbar">
+          <navbar></navbar>
+        </section>
+        <section class="is-scrollable content" ref="main">
+          <router-view></router-view>
+        </section>
+        <section>
+          <phone></phone>
+        </section>
+    </main>
 </template>
 
 <script>
-import HeaderTab from './components/header.vue';
+import Navbar from './components/navbar.vue';
+import Phone from './components/phone.vue';
+
 export default {
   name: 'app',
-  data () {
+  data() {
     return {
-      msg: 'Welcome to Vue App'
+      msg: ''
     };
   },
   components: {
-    HeaderTab
+    Phone,
+    Navbar
   }
 };
 </script>
 
 <style scoped>
-.nav-item { display: inline-block; }
-ul { list-style-type: none; padding: 0; }
-li { text-align: left; margin: 0 10px; }
-a { color: #42b983; }
+  .main {
+    height: 100%;
+    overflow: hidden;
+  }
+  .navbar{
+    float: left;
+    width: 16%;
+    height: 100%;
+    overflow: auto;
+    min-width: 140px;
+    padding-left: 0;  
+  }
+  .content {
+    float: left;
+    width: 50%;
+    overflow: auto;
+    height: 100%;
+    padding-left: 50px;
+  }
+
 </style>

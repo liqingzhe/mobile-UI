@@ -4,17 +4,18 @@
  */
 import Vue from 'vue';
 import Router from 'vue-router';
-const homePage = () => import ('./views/home.vue');
-const aboutPage = () => import ('./views/about.vue');
+const aboutPage = () => import ('./pages/about.vue');
+const toast = () => import ('./pages/toast.md');
 
 Vue.use(Router);
 
 export default new Router({
     routes: [{
         path: '/',
-        component: homePage
-    }, {
-        path: '/about',
         component: aboutPage
-    }]
+    },{
+        path: '/toast',
+        component: toast
+    }
+]
 });

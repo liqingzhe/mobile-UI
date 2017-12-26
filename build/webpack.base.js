@@ -52,7 +52,22 @@ var config = {
         }, {
             test: /\.(woff|eot|svg|ttf)(\?(\w|#)+)?$/,
             loader: 'file-loader?limit=20480&name=[name].[ext]&outputPath=assets/fonts/'
-        }]
+        }, {
+            test: /\.md$/,
+            loader: 'vue-markdown-loader',
+            options: {
+              preprocess: function (MarkdownIt, Source) {
+                MarkdownIt.renderer.rules.table_open = function () {
+                  return '<div class="table-container"><table class="table">';
+                };
+                MarkdownIt.renderer.rules.table_close = function () {
+                  return '</table></div>';
+                };
+                return Source;
+              }
+            }
+          }
+        ]
     },
     resolve: {
         alias: {
