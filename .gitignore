@@ -1,0 +1,7 @@
+*.log
+/.sass-cache
+.DS_Store
+.idea
+/release
+/node_modules
+.vscode
